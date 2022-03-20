@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于我们 | 学习大巴 - 培养新一代人才</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="templatemo-diagoona.css" rel="stylesheet" />
+<!--
+TemplateMo 550 Diagoona
+https://templatemo.com/tm-550-diagoona
+-->
+</head>
+
+<body>
+    <div class="tm-container">        
+        <div>
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                        <i class="fas fa-umbrella-beach fa-3x mt-1 tm-logo"></i>
+                        <div class="media-body">
+                            <h1 class="tm-sitename text-uppercase">学习大巴</h1>
+                            <p class="tm-slogon">多功能学习平台</p>
+                        </div>        
+                    </div>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                            data-toggle="collapse" data-target="#navbar-nav" 
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                            <ul class="navbar-nav text-uppercase">
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="index.html">主页</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link tm-nav-link" href="about.html">关于我们</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="services.html">学习</a>
+                                </li>                            
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="contact.html">登录</a>
+                                </li>
+                            </ul>                            
+                        </div>                        
+                    </nav>
+                </div>
+          </div>
+        function check() {
+            var $username = $("#username_input");
+            var username = $username.val().trim();
+            if (!username){
+                return false
+            }
+            var info_color = $("#username_info").css('color');
+            if (info_color == 'rgb(255, 0, 0)'){
+                return false
+            }
+            var $password_input = $("#password_input");
+            var password = $password_input.val().trim();
+            $password_input.val(md5(password));
+            return true
+        }
+        <form method="POST" enctype="multipart/form-data" action="{% url 'axf:register' %}" onsubmit="check()">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username_input">用户名</label>
+          <input name="username" type="text" class="form-control" id="username_input" placeholder="请输入用户名">
+          <span id="username_info"></span>
+        </div>
+        <div class="form-group">
+          <label for="email_input">邮箱</label>
+          <input name="email" type="text" class="form-control" id="email_input" placeholder="请输入邮箱">
+        </div>
+        <div class="form-group">
+          <label for="password_input">密码</label>
+          <input name="password" type="password" class="form-control" id="password_input" placeholder="请输入密码">
+        </div>
+        <div class="form-group">
+          <label for="password_confirm_input">确认密码</label>
+          <input type="password" class="form-control" id="password_confirm_input" placeholder="请再次输入密码">
+        </div>
+        <div class="form-group">
+          <label for="icon_input">头像</label>
+          <input name="icon" type="file" id="icon_input">
+        </div>
+        <button type="submit" class="btn btn-success btn-block">注册</button>
+        </form>
+        <div class="tm-row">
+            <div class="tm-col-left text-center">            
+                <ul class="tm-bg-controls-wrapper">
+                    <li class="tm-bg-control active" data-id="0"></li>
+                    <li class="tm-bg-control" data-id="1"></li>
+                    <li class="tm-bg-control" data-id="2"></li>
+                </ul>            
+            </div>        
+            <div class="tm-col-right tm-col-footer">
+                <footer class="tm-site-footer text-right">
+                    <p class="mb-0">Copyright 2020 O_O Co. 
+                    
+                    | Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-text-link">TemplateMo</a></p>
+                </footer>
+            </div>   
+        </div>        
+
+        <!-- Diagonal background design -->
+        <div class="tm-bg">
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.backstretch.min.js"></script>
+    <script src="templatemo-script.js"></script>
+</body>
+</html>
