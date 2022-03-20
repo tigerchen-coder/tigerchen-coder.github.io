@@ -41,7 +41,7 @@ https://templatemo.com/tm-550-diagoona
                                 <li class="nav-item">
                                     <a class="nav-link tm-nav-link" href="index.html">主页</a>
                                 </li>
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link tm-nav-link" href="about.html">关于我们</a>
                                 </li>
                                 <li class="nav-item">
@@ -55,21 +55,39 @@ https://templatemo.com/tm-550-diagoona
                     </nav>
                 </div>
           </div>
-        function check() {
-            var $username = $("#username_input");
-            var username = $username.val().trim();
-            if (!username){
-                return false
+        <script type="text/javascript">    
+            function check() {
+                var $username = $("#username_input");
+                var username = $username.val().trim();
+                if (!username){
+                    return false
+                }
+                var info_color = $("#username_info").css('color');
+                if (info_color == 'rgb(255, 0, 0)'){
+                    return false
+                }
+                var $password_input = $("#password_input");
+                var password = $password_input.val().trim();
+                $password_input.val(md5(password));
+                return true
             }
-            var info_color = $("#username_info").css('color');
-            if (info_color == 'rgb(255, 0, 0)'){
-                return false
-            }
-            var $password_input = $("#password_input");
-            var password = $password_input.val().trim();
-            $password_input.val(md5(password));
-            return true
-        }
+        </script>
+            <div class="tm-row">
+            <div class="tm-col-left text-center">            
+                <ul class="tm-bg-controls-wrapper">
+                    <li class="tm-bg-control active" data-id="0"></li>
+                    <li class="tm-bg-control" data-id="1"></li>
+                    <li class="tm-bg-control" data-id="2"></li>
+                </ul>            
+            </div>        
+            <div class="tm-col-right tm-col-footer">
+                <footer class="tm-site-footer text-right">
+                    <p class="mb-0">Copyright 2020 O_O Co. 
+                    
+                    | Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-text-link">TemplateMo</a></p>
+                </footer>
+            </div>   
+        </div>   
         <form method="POST" enctype="multipart/form-data" action="{% url 'axf:register' %}" onsubmit="check()">
         {% csrf_token %}
         <div class="form-group">
@@ -95,22 +113,7 @@ https://templatemo.com/tm-550-diagoona
         </div>
         <button type="submit" class="btn btn-success btn-block">注册</button>
         </form>
-        <div class="tm-row">
-            <div class="tm-col-left text-center">            
-                <ul class="tm-bg-controls-wrapper">
-                    <li class="tm-bg-control active" data-id="0"></li>
-                    <li class="tm-bg-control" data-id="1"></li>
-                    <li class="tm-bg-control" data-id="2"></li>
-                </ul>            
-            </div>        
-            <div class="tm-col-right tm-col-footer">
-                <footer class="tm-site-footer text-right">
-                    <p class="mb-0">Copyright 2020 O_O Co. 
-                    
-                    | Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-text-link">TemplateMo</a></p>
-                </footer>
-            </div>   
-        </div>        
+             
 
         <!-- Diagonal background design -->
         <div class="tm-bg">
