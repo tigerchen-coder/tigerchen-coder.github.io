@@ -72,38 +72,34 @@ https://templatemo.com/tm-550-diagoona
                 return true
             }
         </script>
-            
-        <!-- Diagonal background design -->
-        <div class="tm-bg">
-            <div class="tm-bg-left"></div>
-            <div class="tm-bg-right"></div>
-        </div>
-        <form method="POST" enctype="multipart/form-data" action="{% url 'axf:register' %}" onsubmit="check()">
-        <div class="form-group">
-          <label for="username_input">用户名</label>
-          <input name="username" type="text" class="form-control" id="username_input" placeholder="请输入用户名">
-          <span id="username_info"></span>
-        </div>
-        <div class="form-group">
-          <label for="email_input">邮箱</label>
-          <input name="email" type="text" class="form-control" id="email_input" placeholder="请输入邮箱">
-        </div>
-        <div class="form-group">
-          <label for="password_input">密码</label>
-          <input name="password" type="password" class="form-control" id="password_input" placeholder="请输入密码">
-        </div>
-        <div class="form-group">
-          <label for="password_confirm_input">确认密码</label>
-          <input type="password" class="form-control" id="password_confirm_input" placeholder="请再次输入密码">
-        </div>
-        <div class="form-group">
-          <label for="icon_input">头像</label>
-          <input name="icon" type="file" id="icon_input">
-        </div>
-        <button type="submit" class="btn btn-success btn-block">注册</button>
-        </form>
-             
-            <div class="tm-row">
+        <div class="tm-row">
+                <div class="tm-col-left"></div>
+                <main class="tm-col-right tm-contact-main"> <!-- Content -->
+                    <section class="tm-content tm-contact">
+                        <h2 class="mb-4 tm-content-title">注册</h2>
+                        <form id="contact-form" action="" method="POST">
+                            <form method="POST" enctype="multipart/form-data" action="{% url 'axf:register' %}" onsubmit="check()">
+                            <div class="form-group">
+		                        <label for="username_input">用户名</label>
+		                           <input name="username" type="text" class="form-control" id="username_input" placeholder="请输入用户名">
+		                        <span id="username_info"></span>
+	                        </div>
+                            <div class="form-group">
+		                        <label for="password_input">密码</label>
+		                           <input name="password" type="text" class="form-control" id="password_input" placeholder="请输入密码">
+	                        </div>
+                            <div class="form-group">
+		                        <label for="password_confirm_input">确认密码</label>
+		                           <input name="password" type="text" class="form-control" id="password_confirm_input" placeholder="请再次输入密码">
+	                        </div>
+                            <button type="submit" class="btn btn-success btn-block">注册</button>
+                        </form>
+                    </section>
+                </main>
+            </div>
+        </div>        
+
+        <div class="tm-row">
             <div class="tm-col-left text-center">            
                 <ul class="tm-bg-controls-wrapper">
                     <li class="tm-bg-control active" data-id="0"></li>
@@ -117,9 +113,13 @@ https://templatemo.com/tm-550-diagoona
                     
                     | Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-text-link">TemplateMo</a></p>
                 </footer>
-            </div>   
-        </div>   
+            </div>  
+        </div>
 
+        <div class="tm-bg"> <!-- Diagonal background design -->
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
     </div>
 
     <script src="jquery-3.4.1.min.js"></script>
